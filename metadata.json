@@ -1,0 +1,5 @@
+{
+  "name": "Airtime Scanner",
+  "description": "A utility app for scanning airtime vouchers instantly.",
+  "requestFramePermissions": []
+}

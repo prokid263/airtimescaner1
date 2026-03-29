@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-teal-400: #14b8a6;
+  --color-teal-500: #0f766e;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-gray-200 antialiased selection:bg-teal-500/30;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .bg-glow {
+    @apply fixed pointer-events-none;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, #14b8a6, transparent 70%);
+    filter: blur(150px);
+    opacity: 0.15;
+    top: -200px;
+    left: -200px;
+    animation: float 12s infinite alternate ease-in-out;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(140px) rotate(10deg); }
+  }
+
+  .neo {
+    @apply bg-slate-900 rounded-2xl border border-white/5 shadow-2xl transition-all duration-300;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.6), -5px -5px 15px rgba(255,255,255,0.02);
+  }
+
+  .neo:hover {
+    @apply -translate-y-1.5 border-white/10;
+  }
+
+  .btn3d {
+    @apply bg-teal-400 text-white px-8 py-3.5 rounded-xl font-semibold transition-all duration-200 active:translate-y-1;
+    box-shadow: 0 6px 0 #0f766e, 0 12px 25px rgba(20,184,166,0.35);
+  }
+
+  .btn3d:hover {
+    @apply -translate-y-0.5 brightness-110;
+  }
+
+  .btn3d:active {
+    box-shadow: 0 2px 0 #0f766e;
+  }
+
+  .phone {
+    @apply relative w-[260px] h-[520px] bg-slate-950 rounded-[36px] border-8 border-slate-800 shadow-[0_40px_80px_rgba(0,0,0,0.8)];
+  }
+
+  .screen {
+    @apply h-full rounded-[24px] flex items-center justify-center text-teal-400 font-semibold text-lg;
+    background: linear-gradient(#0f172a, #020617);
+  }
+}
