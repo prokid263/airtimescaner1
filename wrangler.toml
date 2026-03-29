@@ -2,6 +2,5 @@ name = "airtime-scanner"
 pages_build_output_dir = "dist"
 
 [build]
-command = "npx wrangler pages deploy"
-
-watch_dir = "src"
+  command = "npx wrangler pages deploy dist"
+  watch_dir = "src"
